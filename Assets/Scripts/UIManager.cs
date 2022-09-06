@@ -10,10 +10,12 @@ public class UIManager : MonoBehaviour
     public GameObject cardCanvas;
     public GameObject shopcanvas;
     public RectTransform shopRect;
-    public float y = 1072;
+    public float y = Screen.height;
+    float change;
 
     private void Start()
     {
+         change = y / 10;
         cardCanvas.SetActive(true);
         shopcanvas.SetActive(false);
     }
@@ -37,7 +39,7 @@ public class UIManager : MonoBehaviour
         {
             while (y > 0)
             {
-                y -= 107.2f * 2;
+                y -= change*2;
                 shopRect.anchoredPosition3D = new Vector3(shopRect.anchoredPosition3D.x, y, shopRect.anchoredPosition3D.z);
                 Debug.Log(y);
                 yield return new WaitForSeconds(0.1f);
@@ -45,9 +47,9 @@ public class UIManager : MonoBehaviour
         }
         else if(y <= 0)
         {
-                while (y < 1072)
+                while (y < Screen.height)
                 {
-                    y += 107.2f * 2;
+                    y += change*2;
                     shopRect.anchoredPosition3D = new Vector3(shopRect.anchoredPosition3D.x, y, shopRect.anchoredPosition3D.z);
                     Debug.Log(y);
                     yield return new WaitForSeconds(0.1f);
