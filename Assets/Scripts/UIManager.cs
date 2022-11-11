@@ -59,10 +59,3 @@ public class UIManager : MonoBehaviour
         }
     }
 }
-//if (y >= 0)
-//{
-//    shopRect.anchoredPosition3D = new Vector3(shopRect.anchoredPosition3D.x, y, shopRect.anchoredPosition3D.z);
-//    Debug.Log(y);
-//    y--;
-//}
-//StartCoroutine(Animation());
